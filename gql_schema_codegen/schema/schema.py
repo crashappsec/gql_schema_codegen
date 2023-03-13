@@ -275,8 +275,7 @@ class Schema:
                 node = queue.pop(0)
                 if node in to_add:
                     blocks.append(all_blocks[node])
-                children = list(inheritanceTree.get(node, []))
-                children.sort()
+                children = sorted(list(inheritanceTree.get(node, [])))
                 for child_node in children:
                     if child_node not in visited:
                         visited.add(child_node)
